@@ -30,36 +30,36 @@ async function PostJobs(req, res) {
   console.log("job posted");
 }
 
-export function editPost(req, res) {
-  Job.findOne({ email: req.query.email }, (error, post) => {
-    if (error) {
-      return res.status(400).send(error);
-    } else {
-      //add editing part
-    }
-  });
-  Job.save((error) => {
-    if (error) {
-      console.log(error);
-    } else {
-      console.log("Job posting updated successfully!");
-    }
-  });
-}
+// export function editPost(req, res) {
+//   Job.findOne({ email: req.query.email }, (error, post) => {
+//     if (error) {
+//       return res.status(400).send(error);
+//     } else {
+//       //add editing part
+//     }
+//   });
+//   Job.save((error) => {
+//     if (error) {
+//       console.log(error);
+//     } else {
+//       console.log("Job posting updated successfully!");
+//     }
+//   });
+// }
 
-export function deleteJob(req, res) {
-  let job = Job.findOne({ email: req.query.email }, (error) => {
-    if (error) {
-      res.status(400).send(error);
-    }
-  });
-  job.deleteOne((error) => {
-    if (error) {
-      console.log(error);
-    } else {
-      res.send("Job post deleted!");
-    }
-  });
-}
+// export function deleteJob(req, res) {
+//   let job = Job.findOne({ email: req.query.email }, (error) => {
+//     if (error) {
+//       res.status(400).send(error);
+//     }
+//   });
+//   job.deleteOne((error) => {
+//     if (error) {
+//       console.log(error);
+//     } else {
+//       res.send("Job post deleted!");
+//     }
+//   });
+// }
 
 export default PostJobs;
