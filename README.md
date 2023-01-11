@@ -24,7 +24,7 @@ npm install
 npm start
 ```
 
-## Walkthrought
+## Walkthrough
 
 1. Launch the application after installing the dependenies.
 
