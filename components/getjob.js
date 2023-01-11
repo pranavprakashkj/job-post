@@ -21,7 +21,7 @@ export async function getAllJobs(req, res) {
       })
       .skip(startIndex)
       .limit(limit);
-    result.jobs = jobs;
+    result.jobs = jobs.map((obj) => obj.title);
 
     // res.send(jobs.map((obj) => obj.title));
     console.log(jobs);
@@ -36,6 +36,7 @@ export async function getAllJobs(req, res) {
     res.status(400).send(e);
   }
 }
+
 export async function getJob(req, res) {
   try {
     const jobs = await job.find({
