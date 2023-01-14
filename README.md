@@ -33,6 +33,8 @@ npm start
 3. The webserver expose routes are given below
 
   * `http://localhost:3000/postjob`  Post a job
+  * `http://localhost:3000/deletejob/?id=<jobid>`  Deletes a job
+  * `http://localhost:3000/updatejob/?id=<jobid>`  Update a job post 
   * `http://localhost:3000/getalljobs/?skills=<skill>&experience=<year>&page=1&limit=5`  get the name all the jobs filtered by skills and experience
   * `http://localhost:3000/getjob/?title=<job title>`  get the job detail by specifying the title
   * `http://localhost:3000/applyjob/:id`  apply to a specific job using JobId
