@@ -4,15 +4,17 @@ import { getAllJobs, getJob, searchJobs } from "../components/getjob.js";
 import applyJob from "../components/applyjob.js";
 import getApplicant from "../components/getapplicant.js";
 import { login, signup } from "../components/auth.js";
+import { deleteJob, editPost } from "../components/deletejob.js";
 
 const router = express.Router();
 // router.get("/", (req, res) => {
 //   res.send("wassup");
 // });
 router.post("/postjob", PostJobs);
+router.post("/updatejob", editPost);
 router.post("/applyjob/:id", applyJob);
 router.get("/getjob", getJob);
-// router.get("/deletejob", deleteJob);
+router.get("/deletejob", deleteJob);
 router.get("/getalljobs", getAllJobs);
 router.get("/getajobs/search", searchJobs);
 router.get("/getapplicants/:id", getApplicant);
