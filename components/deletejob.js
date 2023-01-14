@@ -21,9 +21,9 @@ export function editPost(req, res) {
       const { title, description, email, skills, experience } = req.body;
       //   res.send(req.body);
 
-      if (!title || !description || !email || !skills || !experience) {
-        return res.status(400).send("All fields required");
-      }
+      //   if (!title || !description || !email || !skills || !experience) {
+      //     return res.status(400).send("All fields required");
+      //   }
       Job.findOneAndUpdate(
         { jobId: req.query.id },
         { title, description, email, skills, experience },
@@ -32,7 +32,7 @@ export function editPost(req, res) {
           if (err) console.log(err);
           else {
             console.log(job);
-            res.send("updated");
+            res.send("Job post updated");
           }
         }
       );
