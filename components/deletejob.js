@@ -11,31 +11,33 @@ export async function deleteJob(req, res) {
 }
 
 export function editPost(req, res) {
-  const { title, description, email, skills, experience } = req.body;
-  //   res.send(req.body);
+  Job.findOne({ jobId: req.query.id }, (error, post) => {
+    if (error) {
+      return res.status(400).send(error);
+    } else if (post === null) {
+      //add editing part
+      res.send("job not found");
+    } else {
+      const { title, description, email, skills, experience } = req.body;
+      //   res.send(req.body);
 
-  if (!title || !description || !email || !skills || !experience) {
-    return res.status(400).send("All fields required");
-  }
-  Job.findOneAndUpdate(
-    { jobId: req.query.id },
-    { title, description, email, skills, experience },
-    null,
-    (err, job) => {
-      if (err) console.log(err);
-      else {
-        console.log(job);
-        res.send("updated");
+      if (!title || !description || !email || !skills || !experience) {
+        return res.status(400).send("All fields required");
       }
+      Job.findOneAndUpdate(
+        { jobId: req.query.id },
+        { title, description, email, skills, experience },
+        null,
+        (err, job) => {
+          if (err) console.log(err);
+          else {
+            console.log(job);
+            res.send("updated");
+          }
+        }
+      );
     }
-  );
-  //   Job.findOne({ email: req.query.email }, (error, post) => {
-  //     if (error) {
-  //       return res.status(400).send(error);
-  //     } else {
-  //       //add editing part
-  //     }
-  //   });
+  });
   //   Job.save((error) => {
   //     if (error) {
   //       console.log(error);
