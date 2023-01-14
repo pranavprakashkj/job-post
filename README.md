@@ -8,7 +8,7 @@
 5. user who created a job posting can view a list of all the applications for that job, including the name, email, and cover letter of the applicant.
 
 
-###Bonus tasks implemented
+### Bonus tasks implemented
 1. Implement authentication 
 2. Add pagination to the list of job postings and applications
 3. Implement a search feature for the job postings.
@@ -24,7 +24,7 @@ npm install
 npm start
 ```
 
-## Walkthrought
+## Walkthrough
 
 1. Launch the application after installing the dependenies.
 
